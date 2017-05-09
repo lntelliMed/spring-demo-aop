@@ -1,6 +1,7 @@
 package com.intellimed.springannotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 	
+	@Autowired
+	@Qualifier("randomWeatherService")
 	private WeatherService weatherService;
 
 	public TennisCoach(){
@@ -26,12 +29,14 @@ public class TennisCoach implements Coach {
 		return weatherService;
 	}
 
+	/*
 	@Autowired
 	// Setter injection
 	public void setWeatherService(WeatherService weatherService) {
 		System.out.println(">> TennisCoach: Inside setWeatherService(WeatherService weatherService)");
 		this.weatherService = weatherService;
 	}
+	*/
 	
 	/*
 	@Autowired
