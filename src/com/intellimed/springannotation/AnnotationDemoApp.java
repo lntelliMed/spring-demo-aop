@@ -10,9 +10,11 @@ public class AnnotationDemoApp {
 		//Coach coach = context.getBean("theSillyCoach", Coach.class);
 		Coach coach = context.getBean("tennisCoach", Coach.class);
 		System.out.println(coach.getDailyWorkout());
-		
+		System.out.println(coach.getDailyWeather());
+
 		Coach coach2 = context.getBean("trackCoach", Coach.class);
 		System.out.println(coach2.getDailyWorkout());
+		System.out.println(coach2.getDailyWeather());
 		
 		context.close();
 	}
