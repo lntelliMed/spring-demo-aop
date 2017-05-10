@@ -1,12 +1,18 @@
 package com.intellimed.springannotation;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
 //@Component("theSillyCoach")
 @Component
+//@Scope("prototype")// Prototype will not call @PreDestory
+@Scope("singleton")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -57,4 +63,13 @@ public class TennisCoach implements Coach {
 		return weatherService.getWeather();
 	}
 
+	@PostConstruct
+	public void doMyStartupStuff(){
+		System.out.println(">> TennisCoach: Inside doMyStartupStuff()");
+	}
+	
+	@PreDestroy
+	public void doMyCleanupStuff(){
+		System.out.println(">> TennisCoach: Inside doMyCleanupStuff()");
+	}
 }
