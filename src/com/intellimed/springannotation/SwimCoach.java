@@ -1,10 +1,16 @@
 package com.intellimed.springannotation;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class SwimCoach implements Coach {
 	
 	private WeatherService weatherService;
 	
-
+	@Value("${foo.email}")
+	private String email;
+	
+	@Value("${foo.team}")
+	private String team;
 	
 	public SwimCoach(WeatherService weatherService) {
 		this.weatherService = weatherService;
@@ -20,5 +26,14 @@ public class SwimCoach implements Coach {
 		return weatherService.getWeather();
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	
 	
 }
