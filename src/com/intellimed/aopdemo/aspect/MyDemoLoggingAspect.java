@@ -9,8 +9,9 @@ import org.springframework.stereotype.Component;
 public class MyDemoLoggingAspect {
 
 	//@Before("execution(public void addAccount())")
-	@Before("execution(public void com.intellimed.aopdemo.dao.AccountDao.addAccount())")
+	//@Before("execution(public void com.intellimed.aopdemo.dao.AccountDao.addAccount())")
+	@Before("execution(public void add*())")
 	public void beforeAddAccountAdvice(){
-		System.out.println("\n===> Running an @Before advice on methode: public void addAccount()");
+		System.out.println("\n===> Running an @Before advice on method");
 	}
 }

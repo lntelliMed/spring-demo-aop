@@ -13,7 +13,8 @@ public class MainDemoApp {
 		MembershipDao membershipDao = context.getBean("membershipDao", MembershipDao.class);
 
 		accountDao.addAccount();
-		membershipDao.addAccount();
+		//membershipDao.addAccount();
+		membershipDao.addMembershipAccount();
 		
 		//System.out.println("\n\nRunning addAccount method again!");
 		//accountDao.addAccount();
