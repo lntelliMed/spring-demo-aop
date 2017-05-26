@@ -14,8 +14,11 @@ public class MainDemoApp {
 
 		Account account = new Account();
 		accountDao.addAccount(account, true);
+		accountDao.doSomeWork();
+		
 		//membershipDao.addAccount();
 		membershipDao.addMembershipAccount();
+		membershipDao.goHome();
 		
 		//System.out.println("\n\nRunning addAccount method again!");
 		//accountDao.addAccount();
