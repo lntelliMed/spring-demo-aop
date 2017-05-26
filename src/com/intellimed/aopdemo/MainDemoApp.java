@@ -12,7 +12,8 @@ public class MainDemoApp {
 		AccountDao accountDao = context.getBean("accountDao", AccountDao.class);
 		MembershipDao membershipDao = context.getBean("membershipDao", MembershipDao.class);
 
-		accountDao.addAccount();
+		Account account = new Account();
+		accountDao.addAccount(account);
 		//membershipDao.addAccount();
 		membershipDao.addMembershipAccount();
 		
