@@ -10,7 +10,8 @@ public class MyDemoLoggingAspect {
 
 	//@Before("execution(public void addAccount())")
 	//@Before("execution(public void com.intellimed.aopdemo.dao.AccountDao.addAccount())")
-	@Before("execution(public void add*())")
+	//@Before("execution(public void add*())")
+	@Before("execution(* add*())")
 	public void beforeAddAccountAdvice(){
 		System.out.println("\n===> Running an @Before advice on method");
 	}
